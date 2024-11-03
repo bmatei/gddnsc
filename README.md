@@ -14,8 +14,17 @@ Supported DNS Services:
  * Aware DNS -- https://github.com/AwareRO/owndyndns/blob/main/README.md
  * Hetzner DNS -- https://dns.hetzner.com/api-docs
 
+## Install
+Check out the releases. There is a debian `.deb` version (for apt/dpkg) and a generic `.tar.gz` for everyone else. If you want me to support more package formats send me a request at matei@busui.ro
+
+For more generic instructions:
+ * the `.sh` file goes anywhere in `PATH`
+ * the systemd files (`.service` and `.timer`) go in `/etc/systemd/system` or `/lib/systemd/system`
 
 ## Configuration
+Default configuration goes in `/etc/gddnsc/domains.conf`. If you want to change that set `CONF` environment variable to a different file.
+
+`domains.conf` format:
 ```
 ################################################
 # domain dns_update_method method_specific_args#
@@ -27,4 +36,9 @@ Supported DNS Services:
 
 # Method: hetzner
 # args: key_file zone_id record_id
+```
+
+Example:
+```
+some.example.com hetzner /etc/gddnsc/hetzner.key <hetzner-zone-id-for-example.com> <hetzner-record-id-for-A-of-some.example.com>
 ```
