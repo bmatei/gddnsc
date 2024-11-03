@@ -1,0 +1,10 @@
+[Unit]
+Description=Generic Dynamic DNS Client timer
+
+[Timer]
+Unit=gddnsc.service
+OnBootSec=20 seconds
+OnUnitActiveSec=1 hour
+
+[Install]
+WantedBy=timers.target

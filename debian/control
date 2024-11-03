@@ -1,0 +1,8 @@
+Package: gddnsc
+Version: 1.0-1
+Section: base
+Priority: optional
+Architecture: all
+Depends: bash
+Maintainer: Matei Busui <matei@busui.ro>
+Description: Generic Dynamic DNS Client
